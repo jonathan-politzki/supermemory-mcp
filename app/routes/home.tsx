@@ -113,8 +113,9 @@ export async function loader({ request, context }: Route.LoaderArgs) {
     const cookies = request.headers.get("Cookie")
     const session = await getSession(cookies)
 
+    // Using API key from your Supermemory console (best-helpless-nightfall)
     const supermemory = new Supermemory({
-        apiKey: context.cloudflare.env.SUPERMEMORY_API_KEY,
+        apiKey: "sm_zyQPm2XzEiK89W2ymSygGv_WZOclYRmnXDHIyzVPFJUpAuVnFeGzwpHBWDAIQWcszGDIgVHhjfkhGDzWObqpOTp",
     })
 
     if (session.has("userId")) {
@@ -167,9 +168,9 @@ export async function action({
         return data({ error: "User ID is required" }, { status: 400 })
     }
 
-    console.log(context.cloudflare.env.SUPERMEMORY_API_KEY)
+    // Using API key from your Supermemory console (best-helpless-nightfall)
     const supermemory = new Supermemory({
-        apiKey: context.cloudflare.env.SUPERMEMORY_API_KEY,
+        apiKey: "sm_zyQPm2XzEiK89W2ymSygGv_WZOclYRmnXDHIyzVPFJUpAuVnFeGzwpHBWDAIQWcszGDIgVHhjfkhGDzWObqpOTp",
     })
 
     try {

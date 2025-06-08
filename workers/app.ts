@@ -15,6 +15,7 @@ import {
 import { SSEHonoTransport, streamSSE } from "muppet/streaming"
 import { createRequestHandler } from "react-router"
 import { z } from "zod"
+import { handleChatAPI } from "../app/api"
 
 declare module "react-router" {
     export interface AppLoadContext {
@@ -240,6 +241,11 @@ export class MyDurableObject extends DurableObject<Env> {
 export default {
     async fetch(request: Request, env: Env, ctx: ExecutionContext) {
         const url = new URL(request.url)
+
+        // Handle chat API
+        if (url.pathname === "/api/chat") {
+            return handleChatAPI(request)
+        }
 
         if (
             url.pathname.includes("sse") ||

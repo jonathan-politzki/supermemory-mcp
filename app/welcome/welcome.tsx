@@ -774,6 +774,18 @@ export function Welcome({
                                                     Learn More
                                                 </span>
                                             </a>
+                                            
+                                            <a
+                                                href="/chat"
+                                                className="bg-gradient-to-r from-green-600/20 to-emerald-600/20 hover:from-green-600/30 hover:to-emerald-600/30 border border-green-500/30 hover:border-green-500/50 transition-all duration-300 px-4 py-3 rounded-xl font-medium text-white/90 text-center group flex items-center justify-center gap-2"
+                                            >
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-green-400">
+                                                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                                                </svg>
+                                                <span className="group-hover:scale-105 transform inline-block transition-transform text-sm">
+                                                    🤖 Test Chat Bot
+                                                </span>
+                                            </a>
                                         </div>
                                     </div>
                                 )}
